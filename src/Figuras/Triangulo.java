@@ -7,7 +7,7 @@ public class Triangulo extends Figura{
     private double lado2;
     private double perimetro;
 
-    public Triangulo(double lado3, double lado1, double lado2) {
+    public Triangulo(double lado1, double lado2, double lado3) {
         this.lado3 = lado3;
         this.lado1 = lado1;
         this.lado2 = lado2;
@@ -15,7 +15,6 @@ public class Triangulo extends Figura{
 
     @Override
     public double calcularArea() {
-        //area=(base*altura)/2;
         double s=(lado1+lado2+lado3)/2;
         area=Math.sqrt((s*(s-lado1)*(s-lado2)*(s-lado3)));
         return area;
