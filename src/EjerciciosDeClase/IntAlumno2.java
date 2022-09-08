@@ -1,10 +1,10 @@
 package EjerciciosDeClase;
 
 public interface IntAlumno2 {
-    void mostrarGrado();
-    int obtenerAñosdeCarrera();
-    public abstract void entrarCurso();
-    default void mostrarHorario(){
+    void MostrarGrado();
+    int obtenerAñosCarrera();
+    public abstract void EntrarCurso();
+    default void MostrarHorario(){
         System.out.println("Horario corrido");
     }
 }

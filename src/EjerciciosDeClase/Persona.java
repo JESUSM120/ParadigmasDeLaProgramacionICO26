@@ -1,38 +1,38 @@
 package EjerciciosDeClase;
 
 public class Persona {
-    String Nombre;
-    int Edad;
-    String Sexo;
-    String Direccion;
-
-    public Persona(String nombre, int edad, String sexo, String Direccion) {
-        this.Nombre = nombre;
-        this.Edad = edad;
-        this.Sexo = sexo;
-        this. Direccion = Direccion;
-    }
+    private String nombre;
+    private int edad;
+    private String sexo ;
+    private String direccion;
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public int getEdad() {
-        return Edad;
+        return edad;
     }
 
     public String getSexo() {
-        return Sexo;
+        return sexo;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
-    public void mostrarInfo(){
-        System.out.println("Nombre: "+ Nombre);
-        System.out.println("Edad: "+Edad);
-        System.out.println("Sexo: "+Sexo);
-        System.out.println("Direcion: "+Direccion);
+    public Persona (String nombre, int edad, String sexo, String direccion){
+        this.nombre=nombre;
+        this.edad=edad;
+        this.sexo=sexo;
+        this.direccion=direccion;
+
+    }
+    public void mostrarinfo(){
+        System.out.println("nombre: "+nombre);
+        System.out.println("edad: "+edad);
+        System.out.println("sexo: "+sexo);
+        System.out.println("direccion: "+direccion);
     }
 }
