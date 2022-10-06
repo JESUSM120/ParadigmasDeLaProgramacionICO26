@@ -21,7 +21,7 @@ public class LabelFrame extends JFrame{
         add(etiqueta1);//
 
         //Constructor de Jlabel con argumentos de cadena, Icono y alineacion
-        Icon insecto= new ImageIcon(getClass().getResource("insecto1.png"));
+        Icon insecto= new ImageIcon(getClass().getResource("Insect-Transparent-Images.png"));
         etiqueta2 = new JLabel("Etiqueta con texto e icono",insecto,SwingConstants.LEFT);
         etiqueta2.setToolTipText("Esta es la etiqueta2");
         add(etiqueta2);// agrega etiqueta2 a JFrame
