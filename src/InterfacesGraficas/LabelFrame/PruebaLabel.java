@@ -1,4 +1,4 @@
-package InterfacesGraficas;
+package InterfacesGraficas.LabelFrame;
 
 import javax.swing.JFrame;
 

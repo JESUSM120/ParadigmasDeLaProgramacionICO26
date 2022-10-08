@@ -1,4 +1,4 @@
-package InterfacesGraficas;
+package InterfacesGraficas.Sum;
 
 import javax.swing.*;
 
