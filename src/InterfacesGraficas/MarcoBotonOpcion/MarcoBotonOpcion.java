@@ -52,7 +52,7 @@ public class MarcoBotonOpcion extends JFrame {
         //crea objetos tipo de letra
         tipoLetraSimple = new Font("Serif",Font.PLAIN,14);
         tipoLetraNegrita = new Font("Serif",Font.BOLD,14);
-        tipoLetraCursiva = new Font("Serif",Font.BOLD,14);
+        tipoLetraCursiva = new Font("Serif",Font.ITALIC,14);
         tipoLetraNegritaCursiva = new Font("Serif",Font.BOLD+Font.ITALIC,14);
         campoTexto.setFont(tipoLetraSimple);
 
