@@ -23,11 +23,12 @@ public class PanelDibujo extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-        super.paintComponent(g); // borra el área de dibujo
+        super.paintComponent(g); // clears the drawing area
 
-        // dibuja todos los puntos
+        // draw all points
         for (Point punto : puntos) {
             g.fillOval(punto.x, punto.y, 4, 4);
         }
     }
+
 }

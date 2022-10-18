@@ -8,63 +8,63 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 
 public class MarcoFlowLayout extends JFrame {
-    private final JButton botonJButtonIzquierda; // botón para establecer la alineación a la izquierda
-    private final JButton botonJButtonCentro; // botón para establecer la alineación al centro
-    private final JButton botonJButtonDerecha; // botón para establecer la alineación a la derecha
-    private final FlowLayout esquema; // objeto esquema
-    private final Container contenedor; // contenedor para establecer el esquema
+    private final JButton botonJButtonIzquierda; // button to set the alignment to the left
+    private final JButton botonJButtonCentro; // button to set alignment to center
+    private final JButton botonJButtonDerecha; // button to set the alignment to the right
+    private final FlowLayout esquema; // schema object
+    private final Container contenedor; // container to set the schema
 
-    // establece la GUI y registra los componentes de escucha de botones
+    // sets the GUI and registers the button listening components
     public MarcoFlowLayout() {
-        super("Demostracion de FlowLayout");
+        super("FlowLayout Demo");
 
         esquema = new FlowLayout();
-        contenedor = getContentPane(); // obtiene contenedor para esquema
+        contenedor = getContentPane(); // gets container for schema
         setLayout(esquema);
-        // establece botonJButtonIzquierda y registra componente de escucha
-        botonJButtonIzquierda = new JButton("Izquierda");
-        add(botonJButtonIzquierda); // agrega botón Izquierda al marco
+        // sets buttonJButton Left and registers listening component
+        botonJButtonIzquierda = new JButton("Left");
+        add(botonJButtonIzquierda); // adds Left button to frame
         botonJButtonIzquierda.addActionListener(
-                new ActionListener() { // clase interna anónima
-                    // procesa evento de botonJButtonIzquierda
+                new ActionListener() { // anonymous internal class
+                    // processes button eventJButton Left
                     @Override
                     public void actionPerformed(ActionEvent evento) {
                         esquema.setAlignment(FlowLayout.LEFT);
 
-                        // realinea los componentes adjuntos
+                        // realinea the attached components
                         esquema.layoutContainer(contenedor);
                     }
                 }
         );
 
-        // establece botonJButtonCentro y registra componente de escucha
-        botonJButtonCentro = new JButton("Centro");
-        add(botonJButtonCentro); // agrega botón Centro al marco
+        // sets buttonJButtonCenter and registers listening component
+        botonJButtonCentro = new JButton("Center");
+        add(botonJButtonCentro); // adds Center button to frame
         botonJButtonCentro.addActionListener(
-                new ActionListener() { // clase interna anónima
-                    // procesa evento de botonJButtonCentro
+                new ActionListener() { // anonymous internal class
+                    // processes button eventJButtonCentro
                     @Override
                     public void actionPerformed(ActionEvent evento) {
                         esquema.setAlignment(FlowLayout.CENTER);
 
-                        // realinea los componentes adjuntos
+                        // realinea the attached components
                         esquema.layoutContainer(contenedor);
                     }
                 }
         );
 
-        // establece botonJButtonDerecha y registra componente de escucha
-        botonJButtonDerecha = new JButton("Derecha");
-        add(botonJButtonDerecha); // agrega botón Derecha al marco
+        // sets buttonJButtonRight and registers listening component
+        botonJButtonDerecha = new JButton("Right");
+        add(botonJButtonDerecha); // adds Right button to frame
         botonJButtonDerecha.addActionListener(
-                new ActionListener() { // clase interna anónima
+                new ActionListener() { // anonymous internal class
 
-                    // procesa evento de botonJButtonDerecha
+                    // processes button eventJButtonDernet
                     @Override
                     public void actionPerformed(ActionEvent evento) {
                         esquema.setAlignment(FlowLayout.RIGHT);
 
-                        // realinea los componentes adjuntos
+                        // realinea the attached components
                         esquema.layoutContainer(contenedor);
                     }
                 }

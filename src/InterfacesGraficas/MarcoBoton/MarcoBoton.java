@@ -13,34 +13,35 @@ public class MarcoBoton extends JFrame{
     private final JButton botonJButtonSimple;
     private final JButton botonJButtonElegante;
 
-    //MarcoBoton agrega objetos JButton A JFrame
+    //MarcoBoton adds JButton objects to JFrame
     public MarcoBoton(){
-        super("Pruba de Botones");
+        super("Button test");
         setLayout(new FlowLayout());
 
-        botonJButtonSimple = new JButton("Boton Simple");
+        botonJButtonSimple = new JButton("Simple Button");
         add(botonJButtonSimple);
 
 
         Icon insecto1= new ImageIcon(getClass().getResource("MonaElegante.gif"));
         Icon insecto2= new ImageIcon(getClass().getResource("MonaSimple.gif"));
-        botonJButtonElegante = new JButton("Boton elegante", insecto1);//Establece la imagen
+        botonJButtonElegante = new JButton("Elegant button", insecto1);//Set the image
 
-        botonJButtonElegante.setRolloverIcon(insecto2);//Establece la imagen de sustitucion
-        add(botonJButtonElegante);//agrega botonJButtonElegante a JFrame
+        botonJButtonElegante.setRolloverIcon(insecto2);//Set the replacement image
+        add(botonJButtonElegante);//adds buttonJButtonElegant to JFrame
 
-        // crea nuevo ManejadorBoton para manejar los eventos de botón
+        // creates new ButtonHand handler to handle button events
         ManejadorBoton manejador = new ManejadorBoton();
         botonJButtonElegante.addActionListener(manejador);
         botonJButtonSimple.addActionListener(manejador);
     }
-    // clase interna para manejar eventos de botón
+    // internal class for handling button events
     private class  ManejadorBoton implements  ActionListener{
-        // maneja evento de botón
+        // handles button event
         @Override
         public void actionPerformed(ActionEvent evento){
             JOptionPane.showMessageDialog(MarcoBoton.this,String.format("Usted oprimio" +
                     ": %s", evento.getActionCommand()));
         }
     }
+
 }// fin de la clase MarcoBoton

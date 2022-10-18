@@ -9,38 +9,38 @@ import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 
 public class MarcoCasillaVerificacion extends JFrame {
-    private JTextField campoTexto;//Muestra el texto en tipos cambiantes
-    private JCheckBox negritaJCheckBox;//para seleccionar/deseleccionar negrita
-    private JCheckBox cursivaJCheckBox;//para seleccionar/deseleccionar cursiva
+    private JTextField campoTexto;//Displays text in changing types
+    private JCheckBox negritaJCheckBox;//to select/deselect bold
+    private JCheckBox cursivaJCheckBox;//to select/deselect italics
 
-    //El constructor de MarcoCasillaVerificacion agrega objetos JCheckBox a JFrame
+    //MarcoCasillaVerification constructor adds JCheckBox objects to JFrame
     public MarcoCasillaVerificacion() {
-        super("Prueba de JCheckBox");
+        super("JCheckBox Test");
         setLayout(new FlowLayout());
-        //establece JTextField y su tipo de letra
-        campoTexto = new JTextField("Observe como cambia el estilo de tipo" +
-                "de letra", 20);
+        //sets JTextField and its font
+        campoTexto = new JTextField("notice how the type style changes" +
+                "of letter", 20);
         campoTexto.setFont(new Font("Serif", Font.PLAIN, 14));
-        add(campoTexto);//agrega campoTexto a JFrame
+        add(campoTexto);//adds Textfield to JFrame
 
-        negritaJCheckBox = new JCheckBox("Negrita");
-        cursivaJCheckBox = new JCheckBox("Cursiva");
-        add(negritaJCheckBox);//agrega casilla de verificacion "negrita" a JFrame
-        add(cursivaJCheckBox);//agrega casilla de verificacion "cursiva" a JFrame
+        negritaJCheckBox = new JCheckBox("Boldface");
+        cursivaJCheckBox = new JCheckBox("Italics");
+        add(negritaJCheckBox);//adds "bold" checkbox to JFrame
+        add(cursivaJCheckBox);//adds "italics" checkbox to JFrame
 
-        //registra componentes de escucha para objetos JCheckBox
+        //registers listener components for JCheckBox objects
         ManejadorCheckBox manejador = new ManejadorCheckBox();
         negritaJCheckBox.addItemListener(manejador);
         cursivaJCheckBox.addItemListener(manejador);
     }
 
-    //clase interna privada para el manejo de eventos ItemListener
+    //private internal class for handling ItemListener events
     private class ManejadorCheckBox implements ItemListener {
         @Override
         public void itemStateChanged(ItemEvent evento) {
-            Font tipoletra = null; //almacena el nuevo objeto Font
-            //determina cuáles objetos CheckBox están seleccionados
-            //y crea el objeto Font
+            Font tipoletra = null; //stores the new Font object
+            //determines which CheckBox objects are selected
+            //and creates the font object
             if (negritaJCheckBox.isSelected() && cursivaJCheckBox.isSelected())
                 tipoletra = new Font("Serif", Font.BOLD + Font.ITALIC, 14);
             else if (negritaJCheckBox.isSelected())
@@ -54,5 +54,6 @@ public class MarcoCasillaVerificacion extends JFrame {
 
         }
     }
+
 }
 

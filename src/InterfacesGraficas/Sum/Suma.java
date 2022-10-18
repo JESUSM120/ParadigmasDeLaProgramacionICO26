@@ -4,18 +4,18 @@ import javax.swing.*;
 
 public class Suma {
     public static void main(String[] args) {
-        //Obtiene la entrada del usuario de los dialogos de entrada de JOptionPane
-        String primerNumero= JOptionPane.showInputDialog("Introduzca el primer entero");
+        //Gets user input from JOptionPane input dialogs
+        String primerNumero= JOptionPane.showInputDialog("Enter the first integer");
 
-        String segundoNumero=JOptionPane.showInputDialog("Introduzca el segundo valor");
+        String segundoNumero=JOptionPane.showInputDialog("Enter the second value");
 
-        //Convierte las entradas String en valores int para usarlos en el calculo
+        //Converts String entries to int values for use in calculation
         int numero1=Integer.parseInt(primerNumero);
         int numero2=Integer.parseInt(segundoNumero);
 
         int suma = numero1 + numero2;
-        //Muestra los resultados en el dialogo de mensajes de JOptionPane
-        JOptionPane.showInputDialog(null, "La suma es: "+suma, "Suma de dos enteros"
-        , JOptionPane.PLAIN_MESSAGE);
+        //Displays the results in the JOptionPane message dialog
+        JOptionPane.showInputDialog(null, "The sum is: "+suma, "Sum of two integers"
+                , JOptionPane.PLAIN_MESSAGE);
     }
-}//fin de la clase Suma
+}//end of the Sum class

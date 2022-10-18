@@ -15,58 +15,59 @@ public class CampoTextoMarco extends JFrame {
     private final JTextField campoTexto3;
     private final JPasswordField campoContrasenia;
 
-    public CampoTextoMarco(){
-        super("Prueba de JTextField y JPasswordField");
+    public CampoTextoMarco() {
+        super("JTextField and JPasswordField test");
         setLayout(new FlowLayout());
 
-        //Construye campo de texto con 10 columnas
-        campoTexto1= new JTextField(10);
+        //Construct text field with 10 columns
+        campoTexto1 = new JTextField(10);
         add(campoTexto1);
 
-        //construye campo de texto cob texto predeterminado
-        campoTexto2 = new JTextField("Escriba el texto aqui");
+        //construct text field cob default text
+        campoTexto2 = new JTextField("Type the text here");
         add(campoTexto2);
 
-        //contruye campo de texo con texto predeterminado y 21 columnas
-        campoTexto3 = new JTextField("Campo de texto no editable",21);
+        //construct texo field with default text and 21 columns
+        campoTexto3 = new JTextField("Non-editable text field", 21);
         campoTexto3.setEditable(false);
         add(campoTexto3);
 
-        //construye campo de contraseña con texto predeterminado
-        campoContrasenia = new JPasswordField("Texto oculto");
+        //construct password field with default text
+        campoContrasenia = new JPasswordField("Hidden text");
         add(campoContrasenia);
 
-        //registra los manejadores de eventos
+        //registers event handlers
         ManejadorCampoTexto manejador = new ManejadorCampoTexto();
         campoTexto1.addActionListener(manejador);
         campoTexto2.addActionListener(manejador);
         campoTexto3.addActionListener(manejador);
         campoContrasenia.addActionListener(manejador);
     }
-    private class ManejadorCampoTexto implements  ActionListener{
+
+    private class ManejadorCampoTexto implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent evento){
+        public void actionPerformed(ActionEvent evento) {
             String cadena = "";
-            //el usuario oprimio Intro en el objeto JTextField campoTexto1
-            if(evento.getSource()==campoTexto1)
-                cadena = String.format("campoTexto2: %s",
+            //the user pressed enter on the JTextField object fieldText1
+            if (evento.getSource() == campoTexto1)
+                cadena = String.format("Text2 field: %s",
                         evento.getActionCommand());
 
-            // el usuario oprimió Intro en el objeto JTextField campoTexto2
-            else if(evento.getSource()==campoTexto2)
-                cadena = String.format("campoTexto2: %s",
+                // the user pressed enter on the JTextField object text2 field
+            else if (evento.getSource() == campoTexto2)
+                cadena = String.format("Text2 field: %s",
                         evento.getActionCommand());
 
-            // el usuario oprimió Intro en el objeto JTextField campoTexto3
-            else if(evento.getSource()==campoTexto3)
-                cadena = String.format("campoTexto3: %s",
+                // the user pressed enter on the jtextfield objecttext3 field
+            else if (evento.getSource() == campoTexto3)
+                cadena = String.format("Text3 field: %s",
                         evento.getActionCommand());
 
-            // el usuario oprimió Intro en el objeto JTextField campoContrasenia
-            else if(evento.getSource()==campoContrasenia)
-                cadena = String.format("campoContraseña: %s",
+                // the user pressed enter on the jtextfield objectconsensine field
+            else if (evento.getSource() == campoContrasenia)
+                cadena = String.format("fieldCondress: %s",
                         evento.getActionCommand());
-            //muestra el contenido del objeto JTextField
+            //displays the contents of the jtextfield object
             JOptionPane.showMessageDialog(null, cadena);
 
         }

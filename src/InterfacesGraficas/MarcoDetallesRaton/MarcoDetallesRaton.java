@@ -7,39 +7,40 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class MarcoDetallesRaton extends JFrame {
-    private String detalles;//String que se muestra en barraEstado
-    private final JLabel barraEstado;//JLabel que aparece en la parte inferior de la ventana
+    private String detalles;//String displayed in barStatus
+    private final JLabel barraEstado;//JLabel that appears at the bottom of the window
 
     //constructor establece String de la barra de titulo y registra componente de escucha de raton
     public MarcoDetallesRaton() {
-        super("Clic y Botones del raton");
+        super("Mouse Click and Buttons");
 
-        barraEstado = new JLabel("Haga clic en el raton");
+        barraEstado = new JLabel("Click on the mouse");
         add(barraEstado, BorderLayout.SOUTH);
-        addMouseListener(new ManejadorClicRaton());//agrega el manejador
+        addMouseListener(new ManejadorClicRaton());//adds the handler
     }
 
-    //clase interna para manejar los eventos del raton
+    //internal class to handle mouse events
     private class ManejadorClicRaton extends MouseAdapter {
-        //maneja evento de clic del raton y determina cual boton se oprimio
+        //handles mouse click event and determines which button was pressed
         @Override
         public void mouseClicked(MouseEvent evento) {
-            int xPos = evento.getX();//Obtiene la posicion x del raton
-            int yPos = evento.getY();//Obtiene la posicion y del raton
+            int xPos = evento.getX();//Gets the x position of the mouse
+            int yPos = evento.getY();//Gets the position and the mouse
 
-            detalles = String.format("Se hizo clic %d vez(veces)",
+            detalles = String.format("Clicked %d time(times)",
                     evento.getClickCount());
 
-            if (evento.isMetaDown())//boton derecho del raton
-                detalles += "con el boton derecho del raton";
-            else if (evento.isAltDown())//boton central del raton
-                detalles += " con el boton central del raton";
-            else //boton izquierda del raton
-                detalles += "con el boton izquierdo del raton";
+            if (evento.isMetaDown())//right mouse button
+                detalles += "with the right mouse button";
+            else if (evento.isAltDown())//central mouse button
+                detalles += " with the central button of the mouse";
+            else //central mouse button
+                detalles += "with the left mouse button";
 
-            barraEstado.setText(detalles);//muestra el mensaje en barraEstado
+            barraEstado.setText(detalles);//displays the message in barStatus
 
         }
     }
+
 }
 

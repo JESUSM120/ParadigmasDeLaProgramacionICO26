@@ -8,30 +8,31 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class LabelFrame extends JFrame{
-    private JLabel etiqueta1;//JLabel solo con texto
-    private JLabel etiqueta2;//JLabel construida con tecto y un icono
-    private JLabel etiqueta3; //JLabel con texto adiccional e icono
+    private JLabel etiqueta1;//JLabel text only
+    private JLabel etiqueta2;//JLabel built with tecto and an icon
+    private JLabel etiqueta3; //JLabel with addictive text and icon
 
     public LabelFrame(){
-        super("Prueba de JLabel");
+        super("JLabel Test");
         setLayout(new FlowLayout());
-        //Constructor de JLabel con argumento String
-        etiqueta1 = new JLabel("Etiqueta con texto");
-        etiqueta1.setToolTipText("Esta es etiqueta1");
+        //JLabel constructor with String argument
+        etiqueta1 = new JLabel("Label with text");
+        etiqueta1.setToolTipText("This is label1");
         add(etiqueta1);//
 
-        //Constructor de Jlabel con argumentos de cadena, Icono y alineacion
+        //Jlabel constructor with string, icon, and alignment arguments
         Icon insecto= new ImageIcon(getClass().getResource("Insect-Transparent-Images.png"));
-        etiqueta2 = new JLabel("Etiqueta con texto e icono",insecto,SwingConstants.LEFT);
-        etiqueta2.setToolTipText("Esta es la etiqueta2");
+        etiqueta2 = new JLabel("Label with text and icon",insecto,SwingConstants.LEFT);
+        etiqueta2.setToolTipText("This is the label2");
         add(etiqueta2);// agrega etiqueta2 a JFrame
 
         etiqueta3 = new JLabel(); // constructor de JLabel sin argumentos
-        etiqueta3.setText("Etiqueta con icono y texto en la parte inferior");
+        etiqueta3.setText("Label with icon and text at the bottom");
         etiqueta3.setIcon(insecto); // agrega icono a JLabel
         etiqueta3.setHorizontalTextPosition(SwingConstants.CENTER);
         etiqueta3.setVerticalTextPosition(SwingConstants.BOTTOM);
-        etiqueta3.setToolTipText("Esta es etiqueta3");
+        etiqueta3.setToolTipText("This is label3");
         add(etiqueta3);
     }
+
 }
