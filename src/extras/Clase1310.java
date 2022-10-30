@@ -3,7 +3,7 @@ package extras;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Clase1310 {
+public class  Clase1310 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int numero;

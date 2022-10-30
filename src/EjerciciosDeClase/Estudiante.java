@@ -1,5 +1,7 @@
 package EjerciciosDeClase;
 
+import ClasesGenericas.Persona;
+
 public class Estudiante extends Persona implements IntAlumno1, IntAlumno2 {
     String noCuenta;
     String Curso;

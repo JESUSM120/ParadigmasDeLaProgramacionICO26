@@ -1,4 +1,4 @@
-package EjerciciosDeClase;
+package ClasesGenericas;
 
 public class Persona {
     private String nombre;
