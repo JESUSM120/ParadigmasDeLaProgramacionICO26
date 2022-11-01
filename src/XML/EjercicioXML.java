@@ -29,41 +29,66 @@ public class EjercicioXML {
             DOMImplementation implementation = builder.getDOMImplementation();
 
 
-            Document documento = implementation.createDocument(null, "concesionario", null);
+            Document documento = implementation.createDocument(null, "Curriculum", null);
             documento.setXmlVersion("1.0");
 
 
-            Element coches = documento.createElement("coches");
-            Element coche = documento.createElement("coche");
+            Element cv = documento.createElement("CurriculumVite");
+            Element persona = documento.createElement("Persona");
 
 
-            Element matricula = documento.createElement("matricula");
-            Text textMatricula = documento.createTextNode("1111AAA");
-            matricula.appendChild(textMatricula);
-            coche.appendChild(matricula);
+            Element Nombre = documento.createElement("Nombre");
+            Text textNombre = documento.createTextNode("Jesus Maldonado Cruz");
+            Nombre.appendChild(textNombre);
+            persona.appendChild(Nombre);
 
 
-            Element marca = documento.createElement("marca");
-            Text textMarca = documento.createTextNode("AUDI");
-            marca.appendChild(textMarca);
-            coche.appendChild(marca);
+            Element FechaNacimiento = documento.createElement("FechaDeNacimiento");
+            Text textFecha = documento.createTextNode("22/08/2003");
+            FechaNacimiento.appendChild(textFecha);
+            persona.appendChild(FechaNacimiento);
 
 
-            Element precio = documento.createElement("precio");
-            Text textPrecio = documento.createTextNode("30000");
-            precio.appendChild(textPrecio);
-            coche.appendChild(precio);
+            Element direccion = documento.createElement("direccion");
+            Text textdireccion = documento.createTextNode("San Felipe del Progreso");
+            direccion.appendChild(textdireccion);
+            persona.appendChild(direccion);
+
+            Element telefono = documento.createElement("Telefono");
+            Text textTelefono = documento.createTextNode("7122130409");
+            telefono.appendChild(textTelefono);
+            persona.appendChild(telefono);
+
+            Element correoElectronico = documento.createElement("CorreoElectronico");
+            Text textCorreo = documento.createTextNode("jc236231@gmail.com");
+            correoElectronico.appendChild(textCorreo);
+            persona.appendChild(correoElectronico);
+
+            Element EstudiosRealizados = documento.createElement("EstudiosRealizados");
+            Text textEstudios = documento.createTextNode("Licenciatura en Ingenieria");
+            EstudiosRealizados.appendChild(textEstudios);
+            persona.appendChild(EstudiosRealizados);
+
+            Element CentroEducativo = documento.createElement("CentroEducativo");
+            Text textCentro = documento.createTextNode("Centro Universitario UAEM Atlacomulco");
+            CentroEducativo.appendChild(textCentro);
+            persona.appendChild(CentroEducativo);
+
+            Element Experiencia = documento.createElement("ExperienciaLaboral");
+            Text textExperiencia = documento.createTextNode("CISCO");
+            Experiencia.appendChild(textExperiencia);
+            persona.appendChild(Experiencia);
 
 
-            coches.appendChild(coche);
+            cv.appendChild(persona);
 
 
-            documento.getDocumentElement().appendChild(coches);
+            documento.getDocumentElement().appendChild(cv);
 
 
             Source source = new DOMSource(documento);
 
-            Result result = new StreamResult(new File("concesionario.xml"));
+            Result result = new StreamResult(new File("Curriculum.xml"));
 
 
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
