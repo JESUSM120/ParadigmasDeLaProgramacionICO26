@@ -22,10 +22,10 @@ public class EjercioXML2 {
             DocumentBuilder builder = factory.newDocumentBuilder();
 
             // Obtengo el documento, a partir del XML
-            Document documento = builder.parse(new File("concesionario.xml"));
+            Document documento = builder.parse(new File("Curriculum.xml"));
 
             // Cojo todas las etiquetas coche del documento
-            NodeList listaCoches = documento.getElementsByTagName("coche");
+            NodeList listaCoches = documento.getElementsByTagName("Persona");
 
             // Recorro las etiquetas
             for (int i = 0; i < listaCoches.getLength(); i++) {
